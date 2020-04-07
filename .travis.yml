@@ -28,4 +28,9 @@ script:
   - composer run check
 
 after_script:
-  - if [ -f "build/logs/clover.xml" ]; then vendor/bin/php-coveralls; fi
+  - if [ -f "build/logs/clover.xml" ]; then
+  - vendor/bin/php-coveralls;
+  - wget https://scrutinizer-ci.com/ocular.phar;
+  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml;
+  - fi
+

@@ -64,7 +64,7 @@ class Basecamp extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->getHost() . '/authorization/token?type='.$this->type;
+        return $this->getHost() . '/authorization/token?type=' . $this->type;
     }
 
     /**
